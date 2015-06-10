@@ -565,7 +565,7 @@ public class QuartzScheduler implements BundleListener {
             return new InternalScheduleOptions(new IllegalArgumentException("Expression can't be null"));
         }
         if ( !CronExpression.isValidExpression(expression) ) {
-            return new InternalScheduleOptions(new IllegalArgumentException("Expressionis invalid : " + expression));
+            return new InternalScheduleOptions(new IllegalArgumentException("Expression is invalid : " + expression));
         }
         return new InternalScheduleOptions( TriggerBuilder.newTrigger()
                 .withSchedule(CronScheduleBuilder.cronSchedule(expression)));
